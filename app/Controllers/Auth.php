@@ -11,4 +11,9 @@ class Auth extends BaseController
     {
         return view('auth/login');
     }
+   
+    public function sign(): String
+    {
+        return view('auth/sign');
+    }
 }
