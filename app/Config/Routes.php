@@ -13,7 +13,17 @@ $routes->group('auth', function (RouteCollection $routes){
 
 $routes->group('auth', function (RouteCollection $routes){
     $routes->match(['get','post'], 'register', 'Genre::register');
-   
+    $routes->post('Genre/save', 'Genre::save');
+
 });
 
-$routes->post('Genre/save', 'Genre::save');
+
+
+$routes->group('admin', function (RouteCollection $routes) {
+    $routes->match(['get', 'post'], 'dashboard', 'Admin::dashboard');
+    $routes->match(['get', 'post'], 'profile', 'Admin::profile');
+    $routes->match(['get', 'post'], 'listGenre', 'Admin::listGenre');
+});
+
+
+
