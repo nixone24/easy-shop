@@ -12,5 +12,8 @@ $routes->group('auth', function (RouteCollection $routes){
 });
 
 $routes->group('auth', function (RouteCollection $routes){
-    $routes->match(['get','post'], 'index', 'Genre::index');
+    $routes->match(['get','post'], 'register', 'Genre::register');
+   
 });
+
+$routes->post('Genre/save', 'Genre::save');
